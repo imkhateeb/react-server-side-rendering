@@ -6,7 +6,7 @@ import path from "path";
 
 // Handle dynamic imports for Vite in ESM
 const __dirname = path.resolve();
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = false;
 
 const createServer = async () => {
   const app = express();
