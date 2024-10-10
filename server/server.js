@@ -1,6 +1,4 @@
 import express from "express";
-import { renderToString } from "react-dom/server";
-import { StaticRouter } from "react-router-dom/server.mjs"; // Correct import for SSR
 import { readFile } from "fs/promises";
 import path from "path";
 
@@ -13,7 +11,7 @@ const createServer = async () => {
 
   let viteServer;
   if (!isProduction) {
-    const vite = await import("vite"); // Dynamically import Vite
+    const vite = await import("vite");
     viteServer = await vite.createServer({
       server: { middlewareMode: "ssr" },
       appType: "custom",
